@@ -1,0 +1,25 @@
+<button id="pay-btn" class="btn">
+Pay ₹500
+</button>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<script>
+document.getElementById('pay-btn').onclick = function(){
+
+var options = {
+    key: "YOUR_RAZORPAY_KEY",
+    amount: 50000,
+    currency: "INR",
+    name: "Hypix Themes",
+    description: "Starter Plan",
+    handler: function (response){
+        alert("Payment Successful!");
+    }
+};
+
+var rzp = new Razorpay(options);
+rzp.open();
+
+}
+</script>
